@@ -10,6 +10,3 @@
 [submodule "modules/apt"]
 	path = modules/apt
 	url = https://github.com/camptocamp/puppet-apt.git
-[submodule "modules/memcached"]
-	path = modules/memcached
-	url = https://github.com/evolvingweb/puppet-memcached.git
