@@ -43,4 +43,14 @@ node "default" {
         "innodb_file_per_table": content => "[mysqld]\ninnodb_file_per_table";
     }
 
+    exec { "Mysql set root password":
+        command => "mysql --defaults-file=/etc/mysql/debian.cnf --execute \"SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');\"";
+    }
+
+    cron { "db backup":
+        command => "sudo innobackupex --user root --password root /var/www/mysqlbackups",
+        user => vagrant,
+        hour => 1,
+        minute => 0;
+    }
 }
