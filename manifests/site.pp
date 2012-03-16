@@ -3,6 +3,9 @@ node "default" {
     $packagelist = ['php5-mysql', 'php5-curl', 'php5-ldap', 'php5-xsl', 'php-html-common', 'php-html-quickform-advmultiselect', 'php-html-quickform', 'php-html-table', 'php-mail-mime',
     'php-pager', 'php-phing', 'php-versioncontrol-svn', 'php5-pecl-http', 'php5-memcache', 'xtrabackup']
 
+    $apache_run_user = "vagrant"
+    $apache_run_group = "vagrant"
+
     include apt
     include apache
     include php
@@ -52,5 +55,13 @@ node "default" {
         user => vagrant,
         hour => 1,
         minute => 0;
+    }
+
+    exec { "php session right":
+        command => "sudo chown root:vagrant /var/lib/php5/";
+    }
+
+    exec { "apache log permission":
+        command => "sudo chown root:vagrant /var/log/apache2/";
     }
 }
