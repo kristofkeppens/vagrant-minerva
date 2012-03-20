@@ -16,9 +16,19 @@ node "default" {
         source => "http://aeolus.ugent.be/debian/aeolus.gpg";
     }
 
+    apt::key { "89DF5277":
+        source => "http://www.dotdeb.org/dotdeb.gpg";
+    }
+
+
     apt::sources_list { "aeolus":
         ensure => present,
         content => "deb http://aeolus.ugent.be/debian/ squeeze main";
+    }
+
+    apt::sources_list { "dotdeb":
+        ensure => present,
+        content => "deb http://packages.dotdeb.org squeeze all";
     }
 
     package { $packagelist:
