@@ -1,7 +1,7 @@
 node "default" {
     Exec { path => "/bin:/sbin:/usr/bin:/usr/sbin" }
     $packagelist = ['php5-mysql', 'php5-curl', 'php5-ldap', 'php5-xsl', 'php-html-common', 'php-html-quickform-advmultiselect', 'php-html-quickform', 'php-html-table', 'php-mail-mime',
-    'php-pager', 'php-phing', 'php-versioncontrol-svn', 'php5-pecl-http', 'php5-memcache', 'xtrabackup']
+    'php-pager', 'php-phing', 'php-versioncontrol-svn', 'php5-pecl-http', 'php5-memcache', 'xtrabackup', 'zip']
 
     $apache_run_user = "vagrant"
     $apache_run_group = "vagrant"
