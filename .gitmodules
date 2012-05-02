@@ -6,7 +6,7 @@
 	url = https://github.com/camptocamp/puppet-php.git
 [submodule "modules/percona"]
 	path = modules/percona
-	url = http://github.com/flyapen/puppet-percona.git
+	url = git://github.com/flyapen/puppet-percona.git
 [submodule "modules/memcached"]
 	path = modules/memcached
 	url = https://github.com/saz/puppet-memcached.git
